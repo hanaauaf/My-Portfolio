@@ -1,0 +1,597 @@
+/* 
+Color Scheme: Deep Blue and Bold Red
+#2C3F70 (deep blue/navy) — used for the nav background and main tones
+#A5231C (bold red) — accent color for borders and highlights
+White and light gray for contrast
+
+Reason: This bold color combination gives a confident and professional feel,
+matching the tone of a portfolio.
+*/
+
+body{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+h1{
+    font-family: 'montserrat', serif;
+}
+p{
+    font-family: 'poppins', sans-serif;
+}
+*{
+    box-sizing: border-box;
+}
+@keyframes SlideInFade{
+    0%{
+        opacity: 0;
+        transform:translateY(30px);
+    }
+    100%{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+@keyframes gradient-move{
+    0% {background-position:0% center;}
+    100% {background-position: 100% center;}
+}
+
+.left-nav h1{
+    margin:0;
+    font-size: 1.5rem;
+}
+.nav{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:20px 40px;
+    background-color: #2C3F70;
+    color:white;
+    height:70px;
+    position: fixed;
+    top: 0 ;
+    z-index: 1000;
+    width:100%;
+    box-sizing: border-box;
+}
+.right-nav a{
+    padding:10px 15px;
+    font-family: 'montserrat', serif;
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+    transition: color 0.3s;
+    position:relative;
+}  
+.right-nav a::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    bottom:0;
+    left:0;
+    background-color: white;
+    transition:width 0.3s ease;
+}
+.right-nav a:hover {
+    color:#A5231C;
+}
+.right-nav a:hover::after{
+    width:100%;
+}
+
+.header{
+    color:white;
+    padding: 120px 60px 80px;
+    background: linear-gradient(135deg, #2C3F70, #A5231C, #502060);
+    position: relative;
+    text-align: center;
+}
+
+.header-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    gap:40px;
+}
+.header-wrapper img{
+    width:350px;
+    height:auto;
+    object-fit: cover;
+    z-index: 1;
+    border: none;
+    transition: transform 0.4s ease;
+}
+.header-wrapper img:hover{
+    transform:translateY(-10px) scale(1.02);
+}
+.hey, .there{
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    font-size: 3.5rem;
+    margin: 0;
+    color: white;
+    font-weight: lighter;
+}
+
+.bottom-text {
+  position: absolute;
+  width:100%;
+  text-align: center;
+  margin-top:20px;
+  font-size: 1.5rem;
+}
+
+.bottom-text.left {
+  bottom:-10px;
+  left:160px;
+  width:fit-content;
+  text-align: left;
+  font-family:'Montserrat', serif;
+  height: fit-content;
+}
+.bottom-text.left h1{
+    font-size: 2rem;
+    
+}
+
+.bottom-text.right {
+  bottom:40px;
+  right:60px;
+  text-align:justify;
+  font-family:'Poppins', sans-serif;
+  width:240px;
+  
+}
+.hey, .there, .bottom-text h1, .bottom-text h3{
+    opacity: 0;
+    animation: SlideInFade 3s ease-out forwards;
+}
+.hey{
+    animation-delay: 0.3s;
+}
+.there{
+    animation-delay:0.6s;
+}
+.bottom-text h1{
+    animation-delay:1s;
+}
+.bottom-text h3{
+    animation-delay:1.3s;
+}
+
+
+/* About me section  */
+
+.about-me{
+    padding:100px 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    max-width:1200px;
+    gap:40px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    animation:fadeSlideIn 1.2s ease-out;
+}
+.about-me img{
+    height:auto;
+    border: 4px solid #A5231C;
+    border-radius: 12px;
+    max-width: 100%;
+    width: 300px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease;
+}
+.about-me img:hover{
+    transform:scale(1.05);
+}
+
+.about-p{
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+
+}
+.about{
+    flex: 1;
+    min-width: 300px;
+}
+.about-h1{
+    font-size: 2rem;
+    color: #2C3F70;
+    margin-bottom: 20px;
+    animation:fadeUp 1.2s ease-out;
+}
+.about-p, .highlights{
+    animation:fadeUp 1.5s ease-out;
+}
+.highlights li{
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-family: 'poppins', sans-serif;
+}
+@keyframes fadeSlideIn{
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100%{
+        opacity: 1;
+        transform:translateY(0);
+    }
+}
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform:translateY(0);
+    }
+}
+
+/* my project section  */
+
+.project-section{
+    background-color: #A5231C;
+    padding:80px 20px;
+    text-align: center;
+}
+.project-title{
+    font-size: 2.5rem;
+    margin-bottom:50px;
+    font-family:'montserrat', serif;
+    color:white;
+}
+.project-card h3{
+    font-family:'montserrat', serif;
+}
+.project-container{
+    display: flex;
+    justify-content: center;
+    gap:40px;
+    transition: all 0.3s ease;
+    flex-wrap: wrap;
+}
+.project-card{
+    background-color: white;
+    width:260px;
+    padding:25px 20px; 
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.08);
+    border-radius: 20px;
+    text-align: center;
+    transition:transform 0.4s ease, opacity 0.4s ease;
+    z-index: 1;
+}
+.project-card p{
+    font-size: 0.95rem;
+}
+.project-container:hover .project-card{
+    transform: scale(0.9);
+    opacity: 0.7;
+}
+.project-container .project-card:hover{
+    transform: scale(1.05);
+    opacity: 1;
+    z-index: 2;
+}
+
+/* Skills and Experience section */
+
+.skills-section{
+    text-align: center;
+    padding:80px 20px;
+    animation: fadeUp 1.2s ease-out;
+}
+.skill-container{
+    max-width: 900px;
+    margin: 0 auto;
+    padding:20px;
+}
+.skills-title{
+    font-family:'montserrat', serif ;
+    margin-bottom:60px;
+    font-size:2.5rem;
+}
+.skill-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border-bottom: 1px solid black;
+    text-align: left;
+    padding:20px 0;
+    opacity: 0;
+    transform:translateY(20px);
+    animation:fadeUp 0.8s ease-out forwards;
+    animation-delay:0.3s;
+    transition: background-color 0.3s ease;
+}
+.skill-row:hover{
+    background-color:#A5231C;
+    border-radius:10px;
+    transform: scale (1.01);
+}
+.skill-row:nth-child(1) { animation-delay: 0.2s; }
+.skill-row:nth-child(2) { animation-delay: 0.4s; }
+.skill-row:nth-child(3) { animation-delay: 0.6s; }
+.skill-row:nth-child(4) { animation-delay: 0.8s; }
+
+
+.skill-date{
+    flex: 1;
+    font-weight: bold;
+    min-width: 100x;
+}
+.skill-title{
+    flex:2;
+    font-weight: 600;
+    font-size:1.1rem;
+}
+.skill-desc{
+    flex:3;
+    font-size:1rem;
+}
+@keyframes fadeUp{
+    0% {
+        opacity:0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Blog section */
+
+.blog{
+    background-color: #F2F2F2;
+    padding: 100px 0;
+    color:#ffffff;
+    display: flex;
+    justify-content: center;
+    margin-top:100px;
+}
+.blog .container{
+    max-width: 100%;
+    margin:0 auto;
+    padding: 0 ;
+}
+.blog-card-wrapper {
+  background-color: #A5231C;
+  border-radius: 20px;
+  padding: 60px 40px;
+  width: 100%;
+  max-width: 1200px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+.blog h2{
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Montserrat', sans-serif;
+    color:#fff;
+}
+.blog-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap:30px;
+}
+.blog-card{
+    background-color: #FFF;
+    color:#333;
+    border-radius: 16px;
+    padding:25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3 ease, box-shadow 0.3s ease;
+}
+.blog-card h3{
+    margin-bottom: 12px;
+    font-family: 'Montserrat', sans-serif;
+    color:#A5231C;
+}
+.blog-card p{
+    font-size: 16px;
+    line-height: 1.6;
+}
+.blog-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* footer */
+
+.footer{
+    background-color: #2C3F70;
+    padding:60px 40px;
+    color:white;
+}
+.footer-wrapper{
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    gap:50px;
+    align-items: flex-start;
+}
+.contact-left{
+    min-width: 280px;
+    flex:1;
+}
+.contact-left h3{
+    margin-bottom:16px;
+    font-size: 24px;
+    font-family: 'montserrat' serif;
+}
+.contact-left p{
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+.social-icons a{
+    color:white;
+    margin: 0 8px 12px 0;
+    font-size: 1.5rem;
+    transition: background-color 0.3s, transform 0.3s;
+    padding:10px;
+    display: inline-block;
+    
+}
+.social-icons a:hover{
+    color:#A5231C;
+    transform: scale(1.1);
+}
+.contact-right{
+    flex: 1;
+    min-width: 300px;
+}
+.contact-right a{
+    color:white;
+    text-decoration: none;
+}
+.contact-right a:hover {
+  color: #A5231C;
+  text-decoration: underline;
+}
+.contact-right h3{
+    margin-bottom:16px;
+    font-size: 24px;
+    font-family: 'montserrat' serif;
+}
+.contact-left form input,
+.contact-left form textarea{
+    width:100%;
+    padding: 10px 14px;
+    font-size: 1rem;
+    margin-bottom:16px;
+    margin-top:16px;
+    border:none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 transparent;
+}
+.contact-right form label{
+    display: block;
+    font-weight: 500;
+    margin-bottom:6px;
+    font-size: 0.95rem;
+    color:#f0f0f0;
+}
+.contact-left form input::placeholder,
+.contact-left form textarea::placeholder {
+  color: #ccc; 
+  font-family: 'poppins', sans-serif;
+  font-size: 0.95rem;
+}
+.contact-left h3,
+.contact-right h3,
+.contact-left form label {
+  font-family: 'Montserrat', sans-serif;
+}
+/* hover effects on form */
+.contact-left form input:focus,
+.contact-left form textarea:focus{
+    outline: #A5231C;
+    transform: scale(1.02);
+    box-shadow: 0 0 8px rgba(165, 35, 28, 0.775);
+}
+.contact-left form input:hover,
+.contact-left form textarea:hover {
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.519);
+}
+.contact-left form button{
+    padding:10px 20px;
+    background-color: white;
+    font-weight: bold;
+    color: #2C3F70;
+    border:none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.contact-left form button:hover{
+    background-color: #eee;
+    transform: scale(1.05);
+}
+.footer-bottom {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  height:10px;
+  width:100%;
+  margin: 0 auto;
+}
+
+/* Responsive for mobile */
+
+@media screen and (max-width:767px) {
+    .nav{
+        display: flex;
+        gap:20px;
+        padding:10px;
+    }
+    .right-nav{
+        flex-direction: column;
+    }
+    .right-nav a{
+        padding:20px;
+    }
+    #contact-nav{
+        margin-left:17px;
+    }
+    .left-nav h1{
+        font-size:1.4rem;
+    }
+    .header-wrapper img{
+        width:200px;
+    }
+    .hey{
+        padding:0;
+        font-size:2.5rem;
+        margin-left:-40px;
+        margin-bottom:100px;
+        margin-right:-20px;
+    }
+    .there{
+        padding: 0;
+        font-size: 2.5rem;
+        margin-left:250px;
+        margin-top:-540px;
+    }
+    .bottom-text{
+        display: flex;
+        justify-content: center;
+    }
+    .bottom-text.left{
+        margin-left:-160px;
+        margin-bottom:10px;
+        height:40px;
+    }
+    .bottom-text.right {
+        margin-top: -10px;
+        height: 1px;
+        bottom:1px; 
+        margin-left:20px;
+        
+}
+    .bottom-text.left h1{
+        font-size:1.5rem;
+    }
+    .bottom-text.right h3{
+        font-size:1rem;
+        margin-left:45px;
+        
+    }
+    .skill-title{
+        padding: 0 10px;
+    }
+}
